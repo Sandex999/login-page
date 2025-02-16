@@ -1,0 +1,267 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('img.jpg'); /* High-quality background */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 20px;
+    transition: background 0.3s ease-in-out; /* Smooth background change */
+}
+
+/* Page Load Animation */
+.fade-in {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Login Section */
+section {
+    position: relative;
+    max-width: 400px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.2); /* Transparent White */
+    border-radius: 20px;
+    padding: 2.5rem 3rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out; /* Added smooth transform */
+}
+
+/* Hover effect for the section */
+section:hover {
+    transform: scale(1.02); /* Slight hover effect for the form */
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+}
+
+/* Title Styling */
+h1 {
+    font-size: 2.2rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    transition: opacity 0.5s ease-out, transform 0.3s ease-in-out;
+}
+
+h1:hover {
+    opacity: 0.8; /* Subtle hover effect */
+    transform: translateY(-3px);
+}
+
+/* Input Box */
+.inputbox {
+    position: relative;
+    margin-bottom: 25px;
+    width: 100%;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0 45px 0 12px;
+    color: #fff;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.inputbox:hover input {
+    background: rgba(255, 255, 255, 0.1); /* Slight background change on hover */
+}
+
+.inputbox input:focus {
+    background: rgba(255, 255, 255, 0.2); /* Focus effect */
+    border-bottom: 2px solid #f2a900; /* Highlight input border on focus */
+}
+
+.inputbox ion-icon {
+    position: absolute;
+    right: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+}
+
+/* Focus Effects */
+.inputbox:focus-within {
+    border-bottom: 2px solid #fff;
+}
+
+/* Remember Me & Forgot Password */
+.forget {
+    margin: 20px 0;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.forget label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.forget label input {
+    margin-right: 5px;
+    accent-color: white;
+}
+
+.forget a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.forget a:hover {
+    text-decoration: underline;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Login Button */
+button {
+    width: 100%;
+    height: 50px;
+    border-radius: 40px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+}
+
+button .spinner {
+    display: none;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border: 4px solid #fff;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button.loading .spinner {
+    display: block;
+}
+
+/* Register Section */
+.register {
+    font-size: 0.9rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register p a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.register p a:hover {
+    text-decoration: underline;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Loading Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    section {
+        padding: 2rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .inputbox input {
+        height: 45px;
+        padding: 0 40px 0 10px;
+    }
+
+    button {
+        height: 45px;
+    }
+}
+
+/* Accessibility Enhancements */
+button:focus, .inputbox input:focus {
+    outline: 3px solid #f2a900; /* Clear focus outline for accessibility */
+}
+
+/* Smooth theme transition */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+    }
+    section {
+        background: rgba(255, 255, 255, 0.15);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    .inputbox input {
+        color: #ddd;
+    }
+    .forget a, .register a {
+        color: #f2a900;
+    }
+    button {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));
+    }
+    button:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+}
