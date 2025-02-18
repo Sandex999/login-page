@@ -1,198 +1,147 @@
-/* Global Reset */
+/* 🌟 Global Reset */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
-/* Body Styling */
+/* 🌟 Body Styling */
 body {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     min-height: 100vh;
-    background-image: url('img.jpg'); /* High-quality background */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background: url('img.jpg') no-repeat center center/cover;
     padding: 20px;
-    transition: background 0.3s ease-in-out; /* Smooth background change */
 }
 
-/* Page Load Animation */
-.fade-in {
-    animation: fadeInUp 1s ease-out;
-}
-
-/* Keyframes for fade-in animation */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Login Section */
-section {
-    position: relative;
+/* 🌟 Glassmorphism Effect */
+.glass {
     max-width: 400px;
-    width: 90%;
-    background: rgba(255, 255, 255, 0.2); /* Transparent White */
-    border-radius: 20px;
-    padding: 2.5rem 3rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out; /* Added smooth transform */
-}
-
-/* Hover effect for the section */
-section:hover {
-    transform: scale(1.02); /* Slight hover effect for the form */
-    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
-}
-
-/* Title Styling */
-h1 {
-    font-size: 2.2rem;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    transition: opacity 0.5s ease-out, transform 0.3s ease-in-out;
-}
-
-h1:hover {
-    opacity: 0.8; /* Subtle hover effect */
-    transform: translateY(-3px);
-}
-
-/* Input Box */
-.inputbox {
-    position: relative;
-    margin-bottom: 25px;
     width: 100%;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fade-in 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.glass:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* 🌟 Fade-in Animation */
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌟 Title */
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fade-in-title 1s ease-in-out forwards;
+}
+
+@keyframes fade-in-title {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌟 Input Box */
+.inputbox {
     display: flex;
     align-items: center;
-    transition: 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 15px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.inputbox:hover {
+    transform: scale(1.02);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.inputbox ion-icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
 }
 
 .inputbox input {
     width: 100%;
-    height: 50px;
     background: transparent;
     border: none;
     outline: none;
     font-size: 1rem;
-    padding: 0 45px 0 12px;
     color: #fff;
-    transition: background 0.3s ease, border-color 0.3s ease;
-}
-
-.inputbox:hover input {
-    background: rgba(255, 255, 255, 0.1); /* Slight background change on hover */
+    transition: all 0.3s ease;
 }
 
 .inputbox input:focus {
-    background: rgba(255, 255, 255, 0.2); /* Focus effect */
-    border-bottom: 2px solid #f2a900; /* Highlight input border on focus */
+    border-color: #f2a900;
+    transform: translateX(5px);
 }
 
-.inputbox ion-icon {
-    position: absolute;
-    right: 12px;
+/* 🌟 Placeholder Styling */
+.inputbox input::placeholder {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 1.2rem;
 }
 
-/* Focus Effects */
-.inputbox:focus-within {
-    border-bottom: 2px solid #fff;
-}
-
-/* Remember Me & Forgot Password */
+/* 🌟 Remember Me & Forgot Password */
 .forget {
-    margin: 20px 0;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.8);
     display: flex;
     justify-content: space-between;
-    width: 100%;
-}
-
-.forget label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.forget label input {
-    margin-right: 5px;
-    accent-color: white;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    color: #fff;
 }
 
 .forget a {
-    color: #fff;
+    color: #f2a900;
     text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
 .forget a:hover {
+    color: #ffb703;
     text-decoration: underline;
-    color: rgba(255, 255, 255, 0.9);
 }
 
-/* Login Button */
+/* 🌟 Login Button */
 button {
     width: 100%;
-    height: 50px;
-    border-radius: 40px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
-    border: none;
-    outline: none;
-    cursor: pointer;
+    padding: 12px;
     font-size: 1rem;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
     font-weight: 600;
     color: #333;
-    transition: all 0.4s ease;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+    transition: all 0.4s ease, box-shadow 0.3s ease-in-out;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-    position: relative;
 }
 
 button:hover {
     background: rgba(255, 255, 255, 0.9);
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+    transition: all 0.4s ease, box-shadow 0.3s ease-in-out;
 }
 
-button .spinner {
-    display: none;
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    border: 4px solid #fff;
-    border-top: 4px solid transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-button.loading .spinner {
-    display: block;
-}
-
-/* Register Section */
+/* 🌟 Register Link */
 .register {
     font-size: 0.9rem;
     color: #fff;
@@ -200,68 +149,79 @@ button.loading .spinner {
     margin-top: 20px;
 }
 
-.register p a {
+.register a {
     text-decoration: none;
-    color: #fff;
+    color: #f2a900;
     font-weight: 600;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
-.register p a:hover {
+.register a:hover {
     text-decoration: underline;
-    color: rgba(255, 255, 255, 0.9);
+    color: #ffb703;
 }
 
-/* Loading Animation */
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Responsive Design */
-@media (max-width: 480px) {
-    section {
-        padding: 2rem;
+/* 🌟 Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
     }
-    
+
+    .glass {
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+
     h1 {
         font-size: 1.8rem;
     }
 
-    .inputbox input {
-        height: 45px;
-        padding: 0 40px 0 10px;
+    .inputbox {
+        padding: 10px;
     }
 
     button {
-        height: 45px;
+        font-size: 1.1rem;
+    }
+
+    .forget {
+        font-size: 0.75rem;
     }
 }
 
-/* Accessibility Enhancements */
-button:focus, .inputbox input:focus {
-    outline: 3px solid #f2a900; /* Clear focus outline for accessibility */
-}
-
-/* Smooth theme transition */
-@media (prefers-color-scheme: dark) {
+/* 🌟 Mobile-First Responsive Design (max-width: 480px) */
+@media (max-width: 480px) {
     body {
-        background-color: #121212;
+        padding: 10px;
+        font-size: 14px;
     }
-    section {
-        background: rgba(255, 255, 255, 0.15);
-        border: 2px solid rgba(255, 255, 255, 0.3);
+
+    .glass {
+        padding: 1rem;
     }
-    .inputbox input {
-        color: #ddd;
+
+    h1 {
+        font-size: 1.6rem;
     }
-    .forget a, .register a {
-        color: #f2a900;
+
+    .inputbox {
+        padding: 8px;
     }
+
+    .inputbox ion-icon {
+        font-size: 1rem;
+    }
+
     button {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));
+        font-size: 1rem;
+        padding: 10px;
     }
-    button:hover {
-        background: rgba(255, 255, 255, 0.3);
+
+    .forget {
+        font-size: 0.75rem;
+    }
+
+    .register {
+        font-size: 0.85rem;
     }
 }
